@@ -24,7 +24,7 @@ jobs:
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
 
       # chọn thumb tiêu đề bắt đầu
-      SEQ_BASE_RUN: "5"
+      SEQ_BASE_RUN: "6"
       TITLE_START: "1"
       THUMB_START: "1"
 
@@ -192,7 +192,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-
+      - name: Install diffq
+        run: |
+          pip install diffq
       - name: Cache pip
         uses: actions/cache@v4
         with:
